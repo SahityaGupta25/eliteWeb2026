@@ -17,3 +17,27 @@ navItems.forEach(item => {
   });
 });
 
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+const fadeElements = document.querySelectorAll(".fade-up");
+
+const revealOnScroll = () => {
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+
