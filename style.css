@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +47,9 @@ body {
 .navbar {
   background-color: #1a1a1a;
   padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
