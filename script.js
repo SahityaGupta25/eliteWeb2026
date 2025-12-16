@@ -40,4 +40,16 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
+AOS.init({
+  duration: 900,
+  easing: "ease-out-cubic",
+  once: true,
+});
+
+const lightbox = GLightbox({
+  touchNavigation: true,
+  loop: true,
+});
+
+
 

@@ -75,18 +75,57 @@ background-color: var(--primary-color);
   color: #fff;
   font-size: 22px;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  cursor: pointer;
 }
+
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+
+.logo:hover {
+  color: var(--primary-color);
+}
+
+
 
 .nav-links a {
+  position: relative;
   color: #fff;
-  margin-left: 20px;
+  margin-left: 24px;
   text-decoration: none;
   font-size: 15px;
+  font-weight: 500;
+  padding: 6px 0;
 }
 
-.nav-links a:hover {
-background-color: var(--primary-color);
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
 }
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 
 /* ===== HAMBURGER ===== */
 .hamburger {
@@ -136,6 +175,10 @@ background-color: var(--primary-color);
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-links a::after {
+    display: none;
   }
 }
 
@@ -322,5 +365,26 @@ background-color: var(--dark-color);
 .trust-grid h3 {
   color: var(--primary-color);
   margin-bottom: 10px;
+}
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
 }
 
