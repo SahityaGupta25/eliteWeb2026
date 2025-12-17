@@ -175,12 +175,22 @@ background-color: var(--primary-color);
 
   .nav-links.active {
     display: flex;
+    
   }
 
   .nav-links a::after {
     display: none;
   }
 }
+
+.nav-links a.active {
+  color: var(--primary-color);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
 
 /* ===== HERO ===== */
 .hero {
@@ -387,4 +397,58 @@ background-color: var(--dark-color);
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
+
+/* Sticky Mobile CTA */
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+
+  .mobile-cta a {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .whatsapp-btn {
+    background-color: #25d366;
+  }
+
+  .call-btn {
+    background-color: var(--primary-color);
+  }
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.testimonial-card h4 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
 
